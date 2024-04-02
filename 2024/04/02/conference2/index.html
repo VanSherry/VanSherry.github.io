@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>第二次技术分享会 | VanSherry</title><meta name="author" content="VanSherry"><meta name="copyright" content="VanSherry"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="第二次技术分享会@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})在类上添加@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})注解代替方法上的注解@Autowired进行自动注入，避免@Autowired注解的重复使用，在声明对象时，要加final。 requ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第二次技术分享会">
+<meta property="og:url" content="http://example.com/2024/04/02/conference2/index.html">
+<meta property="og:site_name" content="VanSherry">
+<meta property="og:description" content="第二次技术分享会@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})在类上添加@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})注解代替方法上的注解@Autowired进行自动注入，避免@Autowired注解的重复使用，在声明对象时，要加final。 requ">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/head.jpg">
+<meta property="article:published_time" content="2024-04-02T02:01:47.031Z">
+<meta property="article:modified_time" content="2024-04-02T06:50:25.295Z">
+<meta property="article:author" content="VanSherry">
+<meta property="article:tag" content="C语言，编程，Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/head.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/04/02/conference2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '第二次技术分享会',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-02 14:50:25'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="VanSherry"><span class="site-name">VanSherry</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">第二次技术分享会</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-04-02T02:01:47.031Z" title="发表于 2024-04-02 10:01:47">2024-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-04-02T06:50:25.295Z" title="更新于 2024-04-02 14:50:25">2024-04-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="第二次技术分享会"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第二次技术分享会"><a href="#第二次技术分享会" class="headerlink" title="第二次技术分享会"></a>第二次技术分享会</h1><h2 id="RequiredArgsConstructor-onConstructor-Autowired"><a href="#RequiredArgsConstructor-onConstructor-Autowired" class="headerlink" title="@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})"></a>@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})</h2><p>在类上添加@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})注解代替方法上的注解@Autowired进行自动注入，避免@Autowired注解的重复使用，<br>在声明对象时，要加final。</p>
+<h2 id="request和response封装"><a href="#request和response封装" class="headerlink" title="request和response封装"></a>request和response封装</h2><p>通过request和response封装可以接收和发送json形式的参数，可以提供统一的接口，提高代码可读性，减少controller层代码的复杂性。</p>
+<ol>
+<li>封装 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Data</span><br><span class="line">public class XXXRequest &#123;</span><br><span class="line">  @NotNull</span><br><span class="line">  private String xxx1;</span><br><span class="line">  @NotNull</span><br><span class="line">  private int xxx2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>使用<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@@RestController</span><br><span class="line">@RequiredArgsConstructor(onConstructor_ = &#123;@Autowired&#125;)</span><br><span class="line">public class XXXController &#123;</span><br><span class="line">  </span><br><span class="line">  private final XXXService xxxService;</span><br><span class="line">  </span><br><span class="line">  @RequestMapping(value = <span class="string">&quot;/xxx/xxx&quot;</span>,method = RequestMethod.POST)</span><br><span class="line">  public CommonResult&lt;String&gt; xxx(@RequestBody XXXrequest request)&#123;</span><br><span class="line">        <span class="built_in">return</span> xxxService.xxx(request);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Validation参数校验"><a href="#Validation参数校验" class="headerlink" title="Validation参数校验"></a>Validation参数校验</h2><p>Validation 是用于检查程序代码中参数的有效性的框架，作为 Spring 框架中的一个参数校验工具，集成在 spring-context 包中。</p>
+<p>Validation 包含了众多的注解来帮助对Java程序不同类型的参数进行校验，校验相关注解分布在spring-boot-starter-validation 依赖的 javax.validation.constraints 包中。</p>
+<ul>
+<li>@Null&#x2F;@NotNull，标注的字段必须为null&#x2F;必须不为null</li>
+<li>@AssertFalse&#x2F;@AssertTrue，标注字段可以为null，但不为null时必须为false&#x2F;true</li>
+<li>@Email，标注的字段对应值必须为email格式</li>
+<li>@URL，标注的字段值必须是URL</li>
+<li>@Patten，标注的字段值必须符合定义的正则表达式</li>
+</ul>
+<h2 id="Swagger3"><a href="#Swagger3" class="headerlink" title="Swagger3"></a>Swagger3</h2><ol>
+<li>引入依赖<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.0.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springdoc&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;springdoc-openapi-starter-webmvc-ui&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.0.2&lt;/version&gt;</span><br><span class="line">        &lt;exclusions&gt;</span><br><span class="line">            &lt;exclusion&gt;</span><br><span class="line">                &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;</span><br><span class="line">                &lt;groupId&gt;org.slf4j&lt;/groupId&gt;</span><br><span class="line">            &lt;/exclusion&gt;</span><br><span class="line">        &lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li>
+<li>配置application.yml文件（其实不配置也行）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server:</span><br><span class="line">  port: 8080</span><br><span class="line"><span class="comment"># 配置swagger文档的访问路径</span></span><br><span class="line">springdoc:</span><br><span class="line">  swagger-ui:</span><br><span class="line">    path: /swagger-ui.html</span><br></pre></td></tr></table></figure></li>
+<li>编写swagger配置类SwaggerConfig<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class SwaggerConfig &#123;</span><br><span class="line"></span><br><span class="line">   @Bean</span><br><span class="line">   public OpenAPI <span class="function"><span class="title">springShopOpenAPI</span></span>() &#123;</span><br><span class="line">   <span class="built_in">return</span> new OpenAPI()</span><br><span class="line">   .info(new Info().title(<span class="string">&quot;标题&quot;</span>)</span><br><span class="line">   .description(<span class="string">&quot;我的API文档&quot;</span>)</span><br><span class="line">   .version(<span class="string">&quot;v1&quot;</span>)</span><br><span class="line">   .license(new License().name(<span class="string">&quot;Apache 2.0&quot;</span>).url(<span class="string">&quot;http://springdoc.org&quot;</span>)))</span><br><span class="line">   .externalDocs(new ExternalDocumentation()</span><br><span class="line">   .description(<span class="string">&quot;外部文档&quot;</span>)</span><br><span class="line">   .url(<span class="string">&quot;https://springshop.wiki.github.org/docs&quot;</span>));</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>注解使用<br><img src="/2024/04/02/conference2/img.png" alt="img.png"></li>
+</ol>
+<h2 id="PostgreSQL自定义函数"><a href="#PostgreSQL自定义函数" class="headerlink" title="PostgreSQL自定义函数"></a>PostgreSQL自定义函数</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">CREATE OR REPLACE FUNCTION 函数名(</span><br><span class="line">    IN xxx int8,</span><br><span class="line">    -- 输入参数</span><br><span class="line">    OUT xxxx varchar,</span><br><span class="line">    -- 输出参数</span><br><span class="line">) RETURNS SETOF pg_catalog.record AS $BODY$</span><br><span class="line">DECLARE</span><br><span class="line">    -- 在这里声明变量,如果需要的话</span><br><span class="line">BEGIN</span><br><span class="line">    -- 在这里编写你的逻辑</span><br><span class="line">    </span><br><span class="line">    -- 使用 RETURN NEXT 返回一行结果</span><br><span class="line">    -- 例如:</span><br><span class="line">    RETURN NEXT;</span><br><span class="line">    </span><br><span class="line">    -- 通过循环遍历你的数据,根据需要返回多行结果</span><br><span class="line">    -- 例如:</span><br><span class="line">    -- FOR row IN</span><br><span class="line">    --     SELECT col1, col2, col3</span><br><span class="line">    --     FROM your_table</span><br><span class="line">    -- LOOP</span><br><span class="line">    --     RETURN NEXT row;</span><br><span class="line">    -- END LOOP;</span><br><span class="line"></span><br><span class="line">    -- 返回 null 表示结果集结束</span><br><span class="line">    RETURN;</span><br><span class="line">END;</span><br><span class="line">$BODY$ LANGUAGE plpgsql;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CREATE OR REPLACE FUNCTION：这是 PostgreSQL 中用来创建或者替换函数的语法。如果函数已经存在，使用 CREATE OR REPLACE FUNCTION 会先尝试删除已存在的同名函数，然后再创建新的函数。<br>函数名：这是你要创建的函数的名称。</li>
+<li>(IN xxx int8, OUT xxxx varchar)：这是函数的参数列表。IN 表示输入参数，OUT 表示输出参数。在这个例子中，函数接收一个名为 xxx 的整数输入参数，并返回一个名为 xxxx 的字符串输出参数。</li>
+<li>RETURNS SETOF pg_catalog.record：这个函数返回一个结果集，其中的每一行都由 pg_catalog.record 类型定义。SETOF 表示返回多行结果。</li>
+<li>AS $BODY$：这个部分标志着函数的实现体的开始。</li>
+<li>DECLARE：在这里可以声明局部变量。</li>
+<li>BEGIN：标志着函数的实际逻辑的开始。</li>
+<li>RETURN NEXT;：这个语句用于返回结果集的下一行。你需要在函数的逻辑中调用 RETURN NEXT 来返回每一行结果。</li>
+<li>RETURN;：当函数逻辑结束时，使用 RETURN; 来表示结果集的结束。</li>
+</ul>
+<h2 id="从web网页查找对应controller方法的方法"><a href="#从web网页查找对应controller方法的方法" class="headerlink" title="从web网页查找对应controller方法的方法"></a>从web网页查找对应controller方法的方法</h2><p>在web页面打开F12,网络里的Fetch&#x2F;XHR那一栏<br><img src="/2024/04/02/conference2/img_1.png" alt="img_1.png"><br>复制名称，或者查看请求url，在idea搜索关键字就好了，负载和响应等信息都可以查看，非常实用。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">VanSherry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/04/02/conference2/">http://example.com/2024/04/02/conference2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">VanSherry</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/head.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/03/27/ssm/" title="SSM框架"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SSM框架</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">VanSherry</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">第二次技术分享会</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RequiredArgsConstructor-onConstructor-Autowired"><span class="toc-number">1.1.</span> <span class="toc-text">@RequiredArgsConstructor(onConstructor_ &#x3D; {@Autowired})</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#request%E5%92%8Cresponse%E5%B0%81%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">request和response封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Validation%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.3.</span> <span class="toc-text">Validation参数校验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swagger3"><span class="toc-number">1.4.</span> <span class="toc-text">Swagger3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PostgreSQL%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">PostgreSQL自定义函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8Eweb%E7%BD%91%E9%A1%B5%E6%9F%A5%E6%89%BE%E5%AF%B9%E5%BA%94controller%E6%96%B9%E6%B3%95%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">从web网页查找对应controller方法的方法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/02/conference2/" title="第二次技术分享会">第二次技术分享会</a><time datetime="2024-04-02T02:01:47.031Z" title="发表于 2024-04-02 10:01:47">2024-04-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/27/ssm/" title="SSM框架">SSM框架</a><time datetime="2024-03-27T05:19:21.293Z" title="发表于 2024-03-27 13:19:21">2024-03-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/mybatisplus/" title="MyBatis-Plus">MyBatis-Plus</a><time datetime="2024-03-24T06:47:22.371Z" title="发表于 2024-03-24 14:47:22">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/22/microservices/" title="初学微服务（持续学习中）">初学微服务（持续学习中）</a><time datetime="2024-03-22T11:19:21.009Z" title="发表于 2024-03-22 19:19:21">2024-03-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/21/zhaociInterview/" title="朝辞项目技术与面试总结">朝辞项目技术与面试总结</a><time datetime="2024-03-21T09:08:29.207Z" title="发表于 2024-03-21 17:08:29">2024-03-21</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By VanSherry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
